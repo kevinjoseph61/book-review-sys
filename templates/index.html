@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    <h3>Search for a book!</h3>
+    <form action="/search" method="GET">
+        <div class="form-group">
+            <input type="text" class="form-control" name="book" autofocus aria-describedby="bookHelp" style="width: 300px" placeholder="Search by ISBN, Title or Author"><br>
+            <input type="radio" id ="all" name="searchby" value="all" checked><label for="all">All </label>
+            <input type="radio" id ="isbn" name="searchby" value="isbn"><label for="isbn">ISBN </label>
+            <input type="radio" id ="title" name="searchby" value="title"><label for="title"> Title</label>
+            <input type="radio" id ="author" name="searchby" value="author"><label for="author"> Author</label>
+        </div>
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+{% endblock %}
